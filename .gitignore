@@ -1,0 +1,3 @@
+# Ignore cypress videos and screenshots
+cypress/videos/*
+cypress/screenshots/*
