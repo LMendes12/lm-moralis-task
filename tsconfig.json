@@ -20,6 +20,7 @@
     },
     "include": [
         "**/*.ts",
-        "cypress/e2e/*spec.ts"
-    ]
+        "cypress/e2e/*spec.ts",
+        "cypress/support/e2e.js"    
+]
 }
