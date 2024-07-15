@@ -1,3 +1,6 @@
 # Ignore cypress videos and screenshots
 cypress/videos/*
 cypress/screenshots/*
+
+# Ignore the .env file
+.env
