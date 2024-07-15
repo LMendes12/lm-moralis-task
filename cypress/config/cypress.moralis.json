@@ -1,0 +1,6 @@
+{
+    "env": {
+        "node_1": "https://site1.moralis-nodes.com/eth/baff015ac44441e59c98e7e2da5fa530",
+        "node_2": "https://site2.moralis-nodes.com/eth/baff015ac44441e59c98e7e2da5fa530"
+    }
+}
