@@ -34,7 +34,31 @@ describe('Positive scenarios for RPC API testing', () => {
       cy.log('Block Number is: ' + blockNumber)
     })
   })
+  it.skip('Runs BlockNumber to test rate limiting', () => {
+    for (let i = 0; i < 100; i++) {
+      cy.request({
+        method: 'POST',
+        url: `${nodeURL}/${chain}/${apiKey}`,
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "eth_blockNumber",
+          params: []
+        }
+      }).then((response: Cypress.Response<any>) => {
+        expect(response.status).eq(200)
 
+        blockNumber = response.body.result
+
+        cy.log('Block Number is: ' + blockNumber)
+      })
+    }
+  })
+
+  //TODO: Understand why result is returning null
   it('Runs Get Block Number with blockNumber and stores the hash', () => {
     cy.request({
       method: 'POST',
@@ -59,26 +83,97 @@ describe('Positive scenarios for RPC API testing', () => {
     })
 
   })
+  it.skip('Runs Get Block Number to test rate limiting', () => {
+    for (let i = 0; i < 100; i++) {
+      cy.request({
+        method: 'POST',
+        url: `${nodeURL}/${chain}/${apiKey}`,
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "eth_getBlockByNumber",
+          params: [
+            blockNumber,
+            true]
+        }
+      }).then((response: Cypress.Response<any>) => {
+        expect(response.status).eq(200)
+        expect(response.body.result.number).eq(blockNumber)
+
+        hashNumber = response.body.result.hash
+        cy.log('The hash is ' + hashNumber)
+      })
+    }
+
+  })
 
   it('Runs Get Transaction by Hash with hashNumber and validates the result', () => {
+
     cy.request({
       method: 'POST',
-      url: `${nodeURL}/${chain}/${apiKey}`,
+      url: `${nodeURL}/${chain}/${apiKey}?-ltxqueue=trac`,
       headers: {
         'content-type': 'application/json'
       },
       body: {
         jsonrpc: "2.0",
         id: 1,
-        method: "eth_getTransactionByHash",
+        method: "eth_getBlockByNumber",
         params: [
-          hashNumber]
+          "latest",
+          true]
       }
     }).then((response: Cypress.Response<any>) => {
       expect(response.status).eq(200)
 
-      cy.log('The hash is ' + JSON.stringify(response))
+      hashNumber = response.body.result.hash
+      cy.log('The hash is ' + hashNumber)
+
+      cy.request({
+        method: 'POST',
+        url: `${nodeURL}/${chain}/${apiKey}`,
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "eth_getTransactionByHash",
+          params: [
+            hashNumber]
+        }
+      }).then((response: Cypress.Response<any>) => {
+        expect(response.status).eq(200)
+
+        cy.log('The hash is ' + JSON.stringify(response.body))
+      })
     })
+
+  })
+  it.skip('Runs Get Transaction by Hash to test rate limiting', () => {
+    for (let i = 0; i < 100; i++) {
+      cy.request({
+        method: 'POST',
+        url: `${nodeURL}/${chain}/${apiKey}`,
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "eth_getTransactionByHash",
+          params: [
+            "0xd4b2e80202cc55517c328412a7792772e1bdd925ac1a2120aeafe84316206ad3",
+            true]
+        },
+        failOnStatusCode: false
+      }).then((response: Cypress.Response<any>) => {
+        expect(response.status).eq(200)
+      })
+    }
   })
 })
 
@@ -207,11 +302,11 @@ describe('Negative scenarios for RPC API testing', () => {
 
   })
 
-    /* With the test below, I expected it to error every single time, however through testing it here 
-  and with the Test Live option on the dashboard I saw that sometimes the request goes through
-  and returns a successful response, when that happens this test will fail because it doesn't find the 
-  error message. However this seems like a bug in the API, and it should always fail if the user sends 
-  invalid parameters. */
+  /* With the test below, I expected it to error every single time, however through testing it here 
+and with the Test Live option on the dashboard I saw that sometimes the request goes through
+and returns a successful response, when that happens this test will fail because it doesn't find the 
+error message. However this seems like a bug in the API, and it should always fail if the user sends 
+invalid parameters. */
   it('Runs Get Block by Number with random blockNumber', () => {
     const randomNumber = GlobalCommands.getRandomFiveDigitNumber
     cy.request({
@@ -301,7 +396,7 @@ describe('Negative scenarios for RPC API testing', () => {
         id: 1,
         method: "eth_getTransactionByHash",
         params: [
-          
+
           true]
       },
       failOnStatusCode: false
