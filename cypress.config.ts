@@ -13,6 +13,9 @@ let environmentConfig: any = {}
 try {
   environmentConfig = JSON.parse(configFileContent);
   environmentConfig.env.apiKey = process.env["RPC_API_KEY"];
+  environmentConfig.env.username = process.env["USERNAME"];
+  environmentConfig.env.password = process.env["PASSWORD"];
+
 
 } catch (error: any) {
   console.error(`Error reading configuration file: ${error.message}`)

@@ -1,0 +1,22 @@
+{
+  "content": {
+    "title": "Nodes",
+    "sub-title": "Access to nodes from all the biggest chains. Find out the cost of a node ",
+    "nodesListTitle": "Your Nodes",
+    "createNodeCta": "Create a New Node",
+    "eth_protocolName": "Ethereum",
+    "base_protocolName": "Base",
+    "eth_site1": "https://site1.moralis-nodes.com/eth/",
+    "eth_site2": "https://site2.moralis-nodes.com/eth/",
+    "base_site1": "https://site1.moralis-nodes.com/base-sepolia/",
+    "base_site2": "https://site2.moralis-nodes.com/base-sepolia/"
+  },
+  "elements": {
+    "typography": "[data-testid='test-typography']",
+    "nodesLefthandMenuCta": "[class='_children_1qqmc_425']",
+    "accordionProtocolName": "[class='_slot_ofk89_432']",
+    "siteInput": "[class='_innerHolder_nfdf4_381']",
+    "eth_accordionCta": "[class='.mui-accordion._accordion_ofk89_366._xl_ofk89_482._transparent_ofk89_508.AccordionStyled-sc-14jvj1j-0.jFTZlP']",
+    "accordionChevron": "_chevron_ofk89_449"
+  }
+}
