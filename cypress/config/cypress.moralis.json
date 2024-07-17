@@ -8,7 +8,7 @@
         "username": "${USERNAME}",
         "password": "${PASSWORD}",
         "moralisAdmin": "https://admin.moralis.io/",
-        "moralisWeb3API": "https://deep-index.moralis.io/api/v2.2/",
-        "address": "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e"
+        "moralisWeb3API": "https://deep-index.moralis.io/api/v2.2",
+        "walletAddress": "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e"
     }
 }
