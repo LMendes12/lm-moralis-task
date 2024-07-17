@@ -34,7 +34,7 @@ describe('Positive scenarios for RPC API testing', () => {
       cy.log('Block Number is: ' + blockNumber)
     })
   })
-  it.skip('Runs BlockNumber to test rate limiting', () => {
+  it('Runs BlockNumber to test rate limiting', () => {
     for (let i = 0; i < 100; i++) {
       cy.request({
         method: 'POST',
@@ -83,7 +83,7 @@ describe('Positive scenarios for RPC API testing', () => {
     })
 
   })
-  it.skip('Runs Get Block Number to test rate limiting', () => {
+  it('Runs Get Block Number to test rate limiting', () => {
     for (let i = 0; i < 100; i++) {
       cy.request({
         method: 'POST',
@@ -153,7 +153,7 @@ describe('Positive scenarios for RPC API testing', () => {
     })
 
   })
-  it.skip('Runs Get Transaction by Hash to test rate limiting', () => {
+  it('Runs Get Transaction by Hash to test rate limiting', () => {
     for (let i = 0; i < 100; i++) {
       cy.request({
         method: 'POST',
