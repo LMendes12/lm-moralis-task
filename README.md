@@ -23,7 +23,7 @@ Finally, I struggled with the UI tests because of the reCaptcha at Login. I was 
    
 2. Navigate to the project directory
    ```bash
-   cd moralis
+   cd lm-moralis-task
 3. Initialize a new Node.js project
    ```bash
    npm init -y
