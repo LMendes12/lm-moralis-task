@@ -24,6 +24,14 @@ describe('Positive UI tests to the Nodes page', () => {
         //Validate the Login was successful
         cy.get('[data-testid="test-typography"]').contains('Welcome').should('be.visible')
     })
+
+    /*
+    For the UI tests, the idea would be to parametrize both elements and content as displayed below, so if anything changes
+    it would be easily fixed. The elements should use unique ids when possible, so I would also work with the developers to try and 
+    improve that from what is available at the moment.
+    The UI tests would create new nodes, open and close the accordions, delete accordions, validate the API key through the 
+    key button is correct as well as negative scenarios like trying to add invalid data to the input fields.
+    */
     it('Create a new Node', () => {
 
         cy.fixture('nodesPage.json').then((data) => {
