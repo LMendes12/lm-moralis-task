@@ -19,7 +19,7 @@ Finally, I struggled with the UI tests because of the reCaptcha at Login. I was 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/LMendes12/moralis.git
+   git clone https://github.com/LMendes12/lm-moralis-task.git
    
 2. Navigate to the project directory
    ```bash
