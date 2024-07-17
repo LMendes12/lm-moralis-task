@@ -5,7 +5,10 @@
 I developed the tests based on the provided tasks, focusing on demonstrating my thought process and the overall structure of the tests and the project, rather than attempting to cover every possible scenario.
 You'll be able to see comments throughout the code whenever I felt some explanation was needed.
 
-Finally, I struggled with the UI tests because of the reCaptcha at Login. I was not able to bypass it (I guess there is no bug there 😄) but that held me back to check if my UI tests were actually working or not.
+Finally some notes on the tests:
+ - I struggled with the UI tests because of the reCaptcha at Login. I was not able to bypass it (I guess there is no bug there 😄) but that held me back to check if my UI test was actually working or not and to create more
+ - k6 script can have the values updated, I kept them low to not cause any troubles 😄
+ - the k6 report is very basic, just added it as an option. 
 
 ## Table of Contents
 
