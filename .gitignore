@@ -1,6 +1,7 @@
 # Ignore cypress videos and screenshots
 cypress/videos/*
 cypress/screenshots/*
+cypress/downloads/*
 
 # Ignore the .env file
 .env
@@ -10,3 +11,4 @@ cypress/load-tests/config.js
 
 # Ignore all csv extension files
 *.csv
+*.txt
