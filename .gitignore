@@ -4,3 +4,9 @@ cypress/screenshots/*
 
 # Ignore the .env file
 .env
+
+# Ignore the k6 config file
+cypress/load-tests/config.js
+
+# Ignore all csv extension files
+*.csv

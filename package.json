@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "cy:test": "npx cypress open",
-    "cy:test:headless": "npx cypress run --headless --browser chrome"
+    "cy:test:headless": "npx cypress run --headless --browser chrome",
+    "k6": "k6 run --out csv=test_results.csv cypress/load-tests/k6_load_tests.js",
+    "moralis:all": "npm run cy:test:headless && npm run k6"
   },
   "keywords": [],
   "author": "",
