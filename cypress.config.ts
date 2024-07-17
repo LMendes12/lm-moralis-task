@@ -13,6 +13,7 @@ let environmentConfig: any = {}
 try {
   environmentConfig = JSON.parse(configFileContent);
   environmentConfig.env.apiKey = process.env["RPC_API_KEY"];
+  environmentConfig.env.web3ApiKey = process.env["WEB3_API_KEY"];
   environmentConfig.env.username = process.env["USERNAME"];
   environmentConfig.env.password = process.env["PASSWORD"];
 
@@ -22,6 +23,7 @@ try {
 }
 
 export default defineConfig({
+  chromeWebSecurity: false,
   ...environmentConfig,
   e2e: {
     setupNodeEvents(on, config) {

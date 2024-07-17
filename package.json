@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "cy:test": "npx cypress open"
+    "cy:test": "npx cypress open",
+    "cy:test:headless": "npx cypress run --headless --browser chrome"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "@types/cypress": "^0.1.6",
+    "@types/k6": "^0.52.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "^20.14.10",
     "cypress": "^13.13.0",

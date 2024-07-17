@@ -14,9 +14,8 @@
   "elements": {
     "typography": "[data-testid='test-typography']",
     "nodesLefthandMenuCta": "[class='_children_1qqmc_425']",
-    "accordionProtocolName": "[class='_slot_ofk89_432']",
-    "siteInput": "[class='_innerHolder_nfdf4_381']",
-    "eth_accordionCta": "[class='.mui-accordion._accordion_ofk89_366._xl_ofk89_482._transparent_ofk89_508.AccordionStyled-sc-14jvj1j-0.jFTZlP']",
-    "accordionChevron": "_chevron_ofk89_449"
+    "accordionProtocolName": "[class='_button_ofk89_398']",
+    "siteInput1": ":nth-child(1) > ._inputHolder_nfdf4_373 > ._innerHolder_nfdf4_381 > [data-testid='mui-input']",
+    "siteInput2": ":nth-child(3) > ._inputHolder_nfdf4_373 > ._innerHolder_nfdf4_381 > [data-testid='mui-input']"
   }
 }

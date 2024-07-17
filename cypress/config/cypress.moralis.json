@@ -4,8 +4,11 @@
         "node_2": "https://site2.moralis-nodes.com",
         "chain": "eth",
         "apiKey": "${RPC_API_KEY}",
+        "web3ApiKey": "${WEB3_API_KEY}",
         "username": "${USERNAME}",
         "password": "${PASSWORD}",
-        "moralisAdmin": "https://admin.moralis.io/"
+        "moralisAdmin": "https://admin.moralis.io/",
+        "moralisWeb3API": "https://deep-index.moralis.io/api/v2.2/",
+        "address": "0xff3879b8a363aed92a6eaba8f61f1a96a9ec3c1e"
     }
 }
